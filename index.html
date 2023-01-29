@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+    <title>Cartas Contra Humanidade</title>
+</head>
+<body onload="generate()">
+    <header>
+        <h1>Cartas Contra a Humanidade</h1>
+        <nav>
+            <button onclick="generate()">Gerar novamente</button>
+            <span class="material-symbols-outlined help" onclick="modal.showModal()">help</span>
+            <dialog id="modal">
+                <div class="container-modal">
+                    <h1>Tutorial: Cartas Contra a Humanidade</h1>
+                    <p>Cartas Contra a Humanidade é um jogo onde você deve responder  a pergunta que está no cartão preto, com a resposta mais engraçada (e arrombada) entre os 4 cartão brancos.</p>
+                    <video src="./img/gif-tutorial.mp4" width="100%" height="auto" muted autoplay loop></video>
+                    <div class="tutorial-card">
+                        <p>O que nunca falha em animar uma festa? <ins style="display: block;">O Streamer Casimiro Chupando o Próprio Pau.</ins></p>
+                    </div>
+                    <p>Uma vez que um cartão branco é usado, não é mais possível usá-lo novamente, então escolha sabiamente (seu idiota). Quando todas as cartas acabarem, o jogo irá se reiniciar.</p>
+                    <p>Caso você se ache um gênio e acha que tudo é horível, você pode gerar um novo conjunto de cartas. E se tornar uma pessoa horrível.</p>
+                    <p style="font-size: 10px;">OBS: TODAS ESSAS REGRAS NÃO SE APLICAM AO BARACK OBAMA, TOBEY MAGUIRE, ALEXANDRE DE MORAES, PEDRO ALVARES DE CABRAL E SHADOW.</p>
+                    <button onclick="modal.close()">Entendido!</button>
+                </div>
+            </dialog>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="black-card">
+                <p></p>
+            </div>
+            <div class="white-cards">
+                <div class="card" onmouseenter="show(this.firstElementChild)" onmouseleave="hide()" onclick="winCard(this)">
+                    <p></p>
+                </div>
+                <div class="card" onmouseenter="show(this.firstElementChild)" onmouseleave="hide()" onclick="winCard(this)">
+                    <p></p>
+                </div>
+                <div class="card" onmouseenter="show(this.firstElementChild)" onmouseleave="hide()" onclick="winCard(this)">
+                    <p></p>
+                </div>
+                <div class="card" onmouseenter="show(this.firstElementChild)" onmouseleave="hide()" onclick="winCard(this)">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <dialog id="modal-end">
+        <div class="container-modal">
+            <h1>É amigo, as cartas acabaram =/</h1>
+            <p>Ou será que até as cartas te odeiam e, pelo jeito, se recusam a ver você continuar jogando.. Nunca saberemos</p>
+            <p>Caso você ainda queira jogar esse lixo mau-feito, clique no botão abaixo. Caso contrário... morra</p>
+            <button onclick="location.reload()">Reiniciar Esse Lixo</button>
+        </div>
+    </dialog>
+    <script src="./script.js"></script>
+</body>
+</html>
